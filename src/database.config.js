@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const db_mongo = {
   // MONGODB FORMAT -->  mongodb://username:password@host:port/database
     //mongoURI: 'mongodb+srv://admin:expo@cluster0-s8ukh.mongodb.net/Expocheck',
-    mongoURI: 'mongodb+srv://one:one@theone-taqth.mongodb.net/passport',
+    mongoURI: 'mongodb+srv://two:two@theone-taqth.mongodb.net/passport',
     secretOrKey: "secret",
 
 };

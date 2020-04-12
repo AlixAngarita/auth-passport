@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const Usuario = require("../models/user");
 
 router.get('/', 
     //passport.authenticate('bearer', { session: false }), 
@@ -8,11 +9,11 @@ router.get('/',
 });
 
 router.post("/nuevo", (req, res) => {
-    //console.log(req.body.usuario)
-    const newUsuario = new Usuario(req.body.usuario);
+    console.log(req.body.user)
+    const newUsuario = new Usuario(req.body.user);
         newUsuario
             .save()
-             .then(usuario => res.json(usuario))
+             .then(user => res.json(user))
             .catch(err => console.log(err));
 
 });
