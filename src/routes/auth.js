@@ -1,21 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const Usuario = require("../models/user");
+const passport = require('passport')
 
-router.get('/', 
-    //passport.authenticate('bearer', { session: false }), 
-    function(req, res) {
-    res.json({username: req.user.username, email: req.user.email});
-});
 
-router.post("/nuevo", (req, res) => {
-    console.log(req.body.user)
-    const newUsuario = new Usuario(req.body.user);
-        newUsuario
-            .save()
-             .then(user => res.json(user))
-            .catch(err => console.log(err));
-
-});
+router.get('/login', 
+    passport.authenticate('bearer', { session: false }), (req,res) => {
+        res.json({username: req.user.username, email: req.user.email})
+    }
+);
 
 module.exports = router;
